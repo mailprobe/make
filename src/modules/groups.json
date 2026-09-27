@@ -1,0 +1,15 @@
+[
+    {
+        "label": "Actions",
+        "modules": [
+            "verifyEmail",
+            "getCredits"
+        ]
+    },
+    {
+        "label": "Other",
+        "modules": [
+            "makeApiCall"
+        ]
+    }
+]

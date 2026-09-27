@@ -1,0 +1,91 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "mailprobe": {
+                "label": "MailProbe",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/mailprobe/mailprobe.communication.iml.json",
+                    "params": "connections/mailprobe/mailprobe.params.iml.json",
+                    "common": null
+                }
+            }
+        },
+        "module": {
+            "verifyEmail": {
+                "label": "Verify an email address",
+                "description": "Checks whether an email address exists and can receive mail, without sending an email. Uses one MailProbe credit.",
+                "moduleType": "action",
+                "actionCrud": "read",
+                "connection": "mailprobe",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/verifyEmail/verifyEmail.communication.iml.json",
+                    "staticParams": "modules/verifyEmail/verifyEmail.static-params.iml.json",
+                    "mappableParams": "modules/verifyEmail/verifyEmail.mappable-params.iml.json",
+                    "interface": "modules/verifyEmail/verifyEmail.interface.iml.json",
+                    "samples": "modules/verifyEmail/verifyEmail.samples.iml.json",
+                    "scope": "modules/verifyEmail/verifyEmail.scope.iml.json"
+                }
+            },
+            "getCredits": {
+                "label": "Get credit balance",
+                "description": "Returns the number of verification credits left on the MailProbe account.",
+                "moduleType": "action",
+                "actionCrud": "read",
+                "connection": "mailprobe",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/getCredits/getCredits.communication.iml.json",
+                    "staticParams": "modules/getCredits/getCredits.static-params.iml.json",
+                    "mappableParams": "modules/getCredits/getCredits.mappable-params.iml.json",
+                    "interface": "modules/getCredits/getCredits.interface.iml.json",
+                    "samples": "modules/getCredits/getCredits.samples.iml.json",
+                    "scope": "modules/getCredits/getCredits.scope.iml.json"
+                }
+            },
+            "makeApiCall": {
+                "label": "Make an API call",
+                "description": "Sends a custom API call to MailProbe. You can use this to call endpoints that aren't covered by existing modules.",
+                "moduleType": "universal",
+                "actionCrud": null,
+                "connection": "mailprobe",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/makeApiCall/makeApiCall.communication.iml.json",
+                    "staticParams": "modules/makeApiCall/makeApiCall.static-params.iml.json",
+                    "mappableParams": "modules/makeApiCall/makeApiCall.mappable-params.iml.json",
+                    "interface": "modules/makeApiCall/makeApiCall.interface.iml.json",
+                    "samples": "modules/makeApiCall/makeApiCall.samples.iml.json",
+                    "scope": "modules/makeApiCall/makeApiCall.scope.iml.json"
+                }
+            }
+        },
+        "function": {},
+        "rpc": {},
+        "webhook": {}
+    },
+    "origins": [
+        {
+            "label": "Make",
+            "baseUrl": "https://eu2.make.com/api",
+            "appId": "mailprobe",
+            "appVersion": 1,
+            "idMapping": {
+                "connection": [],
+                "module": [],
+                "function": [],
+                "rpc": [],
+                "webhook": []
+            },
+            "apikeyFile": "../.secrets/apikey"
+        }
+    ]
+}

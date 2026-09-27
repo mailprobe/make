@@ -1,0 +1,29 @@
+{
+    "baseUrl": "https://mailprobe.dev/api",
+    "headers": {
+        "Authorization": "Bearer {{connection.apiKey}}",
+        "User-Agent": "make-mailprobe/1.0"
+    },
+    "timeout": "{{common.timeout}}",
+    "response": {
+        "error": {
+            "message": "[{{statusCode}}] {{ifempty(body.error, 'MailProbe returned an error.')}}",
+            "401": {
+                "type": "InvalidAccessTokenError",
+                "message": "[401] The MailProbe API key is invalid or has been revoked. Create a key on the Developer page of your MailProbe account and update the connection."
+            },
+            "402": {
+                "type": "{{if(body.code == 'PAID_ONLY_DOMAIN', 'DataError', 'RuntimeError')}}",
+                "message": "[402] {{body.error}} Credits: https://mailprobe.dev/pricing/"
+            },
+            "500": {
+                "message": "[500] {{ifempty(body.error, 'Verification failed.')}} MailProbe refunds the credit when a check fails on its side."
+            }
+        }
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.authorization"
+        ]
+    }
+}

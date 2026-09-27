@@ -1,0 +1,7 @@
+[
+    {
+        "name": "credits",
+        "type": "uinteger",
+        "label": "Credits"
+    }
+]

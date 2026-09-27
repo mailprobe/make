@@ -1,0 +1,9 @@
+[
+    {
+        "name": "email",
+        "type": "text",
+        "label": "Email address",
+        "required": true,
+        "help": "Address to check. MailProbe asks the recipient's mail server whether the mailbox exists, without sending an email. Each check uses one credit. For example, `jane.doe@example.com`."
+    }
+]

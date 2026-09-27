@@ -1,0 +1,7 @@
+{
+    "label": "MailProbe",
+    "description": "Real-time email verification: checks whether an address exists and can receive mail, without sending an email.",
+    "theme": "#6C5CE7",
+    "language": "en",
+    "icon": "branding/make-logo-512.png"
+}

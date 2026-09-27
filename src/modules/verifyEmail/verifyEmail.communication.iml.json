@@ -1,0 +1,12 @@
+{
+    "url": "/v1/verify",
+    "method": "POST",
+    "body": {
+        "emails": [
+            "{{trim(parameters.email)}}"
+        ]
+    },
+    "response": {
+        "output": "{{body[1]}}"
+    }
+}

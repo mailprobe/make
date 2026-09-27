@@ -1,0 +1,10 @@
+[
+    {
+        "name": "apiKey",
+        "type": "password",
+        "label": "API key",
+        "required": true,
+        "editable": true,
+        "help": "You can obtain your API key on the [Developer page](https://mailprobe.dev/dashboard/#/developer) in your MailProbe account. MailProbe shows a key only once, when you create it."
+    }
+]

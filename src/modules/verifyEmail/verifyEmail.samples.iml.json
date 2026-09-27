@@ -1,0 +1,22 @@
+{
+    "email": "jane.doe@example.com",
+    "status": "valid",
+    "result": "deliverable",
+    "score": 92,
+    "reason": null,
+    "did_you_mean": null,
+    "disposable": false,
+    "role_based": false,
+    "free_provider": false,
+    "catch_all": false,
+    "syntax": true,
+    "mx_found": true,
+    "smtp_check": true,
+    "smtp_code": 250,
+    "smtp_enhanced_code": "2.1.5",
+    "retry_after": null,
+    "mx_records": [
+        "mx1.example.com",
+        "mx2.example.com"
+    ]
+}

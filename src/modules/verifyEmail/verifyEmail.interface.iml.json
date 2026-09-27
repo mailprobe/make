@@ -1,0 +1,90 @@
+[
+    {
+        "name": "email",
+        "type": "text",
+        "label": "Email address"
+    },
+    {
+        "name": "status",
+        "type": "text",
+        "label": "Status"
+    },
+    {
+        "name": "result",
+        "type": "text",
+        "label": "Result"
+    },
+    {
+        "name": "score",
+        "type": "uinteger",
+        "label": "Score"
+    },
+    {
+        "name": "reason",
+        "type": "text",
+        "label": "Reason"
+    },
+    {
+        "name": "did_you_mean",
+        "type": "text",
+        "label": "Suggested correction"
+    },
+    {
+        "name": "disposable",
+        "type": "boolean",
+        "label": "Disposable domain"
+    },
+    {
+        "name": "role_based",
+        "type": "boolean",
+        "label": "Role-based address"
+    },
+    {
+        "name": "free_provider",
+        "type": "boolean",
+        "label": "Free email provider"
+    },
+    {
+        "name": "catch_all",
+        "type": "boolean",
+        "label": "Catch-all domain"
+    },
+    {
+        "name": "syntax",
+        "type": "boolean",
+        "label": "Valid syntax"
+    },
+    {
+        "name": "mx_found",
+        "type": "boolean",
+        "label": "MX records found"
+    },
+    {
+        "name": "smtp_check",
+        "type": "boolean",
+        "label": "Mailbox checked over SMTP"
+    },
+    {
+        "name": "smtp_code",
+        "type": "uinteger",
+        "label": "SMTP reply code"
+    },
+    {
+        "name": "smtp_enhanced_code",
+        "type": "text",
+        "label": "SMTP enhanced status code"
+    },
+    {
+        "name": "retry_after",
+        "type": "uinteger",
+        "label": "Retry after (seconds)"
+    },
+    {
+        "name": "mx_records",
+        "type": "array",
+        "label": "MX records",
+        "spec": {
+            "type": "text"
+        }
+    }
+]

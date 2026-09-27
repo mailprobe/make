@@ -1,0 +1,18 @@
+{
+    "url": "https://mailprobe.dev/api/v1/credits",
+    "method": "GET",
+    "headers": {
+        "Authorization": "Bearer {{parameters.apiKey}}",
+        "User-Agent": "make-mailprobe/1.0"
+    },
+    "response": {
+        "error": {
+            "message": "[{{statusCode}}] {{ifempty(body.error, 'MailProbe rejected the API key.')}}"
+        }
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.authorization"
+        ]
+    }
+}
