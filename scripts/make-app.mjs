@@ -132,7 +132,7 @@ async function exists(api, url) {
 
 async function create(manifest, app, origin) {
   const api = client(origin);
-  await api('POST', '/sdk/apps', {
+  const created = await api('POST', '/sdk/apps', {
     json: {
       name: origin.appId,
       label: app.label,
@@ -143,7 +143,10 @@ async function create(manifest, app, origin) {
       audience: 'global',
     },
   });
-  console.log(`created app ${origin.appId}`);
+  // Make appends a random suffix to the requested name: the origin keeps the real one.
+  origin.appId = created.app.name;
+  await writeFile(MANIFEST, `${JSON.stringify(manifest, null, 4)}\n`);
+  console.log(`created app ${origin.appId}, saved in makecomapp.json`);
 }
 
 async function deploy(manifest, app, origin, { icon }) {

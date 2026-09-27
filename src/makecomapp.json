@@ -75,12 +75,30 @@
     "origins": [
         {
             "label": "Make",
-            "baseUrl": "https://eu2.make.com/api",
-            "appId": "mailprobe",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "mailprobe-4iedvg",
             "appVersion": 1,
             "idMapping": {
-                "connection": [],
-                "module": [],
+                "connection": [
+                    {
+                        "local": "mailprobe",
+                        "remote": "mailprobe-4iedvg"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "verifyEmail",
+                        "remote": "verifyEmail"
+                    },
+                    {
+                        "local": "getCredits",
+                        "remote": "getCredits"
+                    },
+                    {
+                        "local": "makeApiCall",
+                        "remote": "makeApiCall"
+                    }
+                ],
                 "function": [],
                 "rpc": [],
                 "webhook": []
