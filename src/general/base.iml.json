@@ -14,7 +14,7 @@
             },
             "402": {
                 "type": "{{if(body.code == 'PAID_ONLY_DOMAIN', 'DataError', 'RuntimeError')}}",
-                "message": "[402] {{body.error}} Credits: https://mailprobe.dev/pricing/"
+                "message": "[402] {{ifempty(body.error, 'MailProbe returned an error.')}} Credits: https://mailprobe.dev/pricing/"
             },
             "500": {
                 "message": "[500] {{ifempty(body.error, 'Verification failed.')}} MailProbe refunds the credit when a check fails on its side."
